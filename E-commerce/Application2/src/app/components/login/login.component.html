@@ -1,0 +1,10 @@
+<div class="login-form">
+<form #loginForm="ngForm" (ngSubmit)="getLoginDetails(loginForm.value)">
+    <input type="text" placeholder="Username" ngModel name="username">
+    <br>
+    <input type="password" placeholder="Password" ngModel name="password">
+    <br>
+    <button class="btn btn-primary">Login</button>
+    <a class="btn btn-secondary" href="register">Register</a>
+</form>
+</div>

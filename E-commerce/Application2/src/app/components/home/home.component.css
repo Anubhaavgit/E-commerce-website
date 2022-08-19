@@ -1,0 +1,10 @@
+input,select{
+    width: 20%;
+}
+.product-list{
+    margin-top: 20%;
+}
+.card{
+    width: 28%;
+    margin:0 auto;
+}

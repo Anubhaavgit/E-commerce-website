@@ -1,0 +1,11 @@
+<div class="register-form">
+<form #registerForm="ngForm" (ngSubmit)="getRegisterDetails(registerForm.value)">
+    <input type="text" placeholder="Name" ngModel name="name">
+    <br>
+    <input type="text" placeholder="Username" ngModel name="username">
+    <br>
+    <input type="password" placeholder="Password" ngModel name="password">
+    <br>
+    <button class="btn btn-primary">Login</button>
+</form>
+</div>

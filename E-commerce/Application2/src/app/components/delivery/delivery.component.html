@@ -1,0 +1,28 @@
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{product.imgLink}}" alt="..." /></div>
+            <div class="col-md-6">
+                <div class="small mb-1">Product Code: {{product.productCode}}</div>
+                <div class="class h3 fw-bolder">{{product.brand}}</div>
+                <h1 class="display-5 fw-bolder">{{product.name}}</h1>
+                <div class="fs-5 mb-5">
+                    <span>{{product.price | currency:'INR'}}</span>
+                </div>
+                <p class="lead">{{product.description}}</p>
+                <div class="d-flex justify-content-start">
+                    <form #pinService="ngForm" (ngSubmit)="checkPincode(pinService.value)" class="row">
+                        <h5 class="mt-3">Check Serviceability</h5>
+                        <input type="hidden" name="productCode" value="{{this.product.productCode}}" ngModel>
+                        <input class="col-auto flex-grow-1 form-control text-center ms-3 me-3" #pincode="ngModel" name="pincode" pattern=".{6}" type="num" placeholder="Enter Pincode" style="max-width: 10rem" ngModel/>
+                        <input class="col-auto btn btn-outline-dark" type="submit" value="Check">
+                        <div *ngIf="pincode.errors?.['pattern']" class="form-text text-danger">Invalid Pincode</div>
+                        <div *ngIf="errorMessageStatus" class="alert alert-danger mt-2">{{serviceMessage}}</div>
+                        <div *ngIf="successMessageStatus" class="alert alert-success mt-2">{{serviceMessage}}</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
